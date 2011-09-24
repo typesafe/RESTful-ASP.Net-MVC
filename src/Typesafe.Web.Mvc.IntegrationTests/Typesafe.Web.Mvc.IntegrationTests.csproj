@@ -50,6 +50,7 @@
     <Compile Include="IntegrationTesting\IisExpressSpecs\When_creating_and_stopping_IIS_Express.cs" />
     <Compile Include="IntegrationTesting\IisExpressSpecs\When_creating_an_IIS_Express_instance_for_a_non_existing_physical_directory.cs" />
     <Compile Include="IntegrationTesting\IisExpressSpecs\When_disposing_an_iis_server_instance.cs" />
+    <Compile Include="IntegrationTesting\TestClientSpecs\When_initializing_the_test_client.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
