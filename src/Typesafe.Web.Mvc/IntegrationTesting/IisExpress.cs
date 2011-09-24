@@ -8,12 +8,12 @@ namespace Typesafe.Web.Mvc.IntegrationTesting
 	{
 		private readonly Process process;
 
+		private readonly string iisExpressExe = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "IIS Express\\iisexpress.exe");
+
 		public IisExpress(string physicalPath, int port)
 		{
 			if (!Directory.Exists(physicalPath))
 				throw new DirectoryNotFoundException(string.Format("The web site path ('{0}') does not exist. Did you provide an incorrect path?", physicalPath));
-
-			var iisExpressExe = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "IIS Express\\iisexpress.exe");
 
 			if(!File.Exists(iisExpressExe))
 				throw new FileNotFoundException(string.Format("The IISExpress executable ('{0}') could not be found. Please installe IIS Express first.", iisExpressExe));
