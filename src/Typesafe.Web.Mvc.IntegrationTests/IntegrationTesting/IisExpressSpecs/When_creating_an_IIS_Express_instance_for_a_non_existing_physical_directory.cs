@@ -8,13 +8,13 @@ namespace Typesafe.Web.Mvc.IntegrationTests.IntegrationTesting.IisExpressSpecs
 	[TestFixture]
 	public class When_creating_an_IIS_Express_instance_for_a_non_existing_physical_directory
 	{
-		private bool directoryNotFound;
+		private readonly bool directoryNotFound;
 
 		public When_creating_an_IIS_Express_instance_for_a_non_existing_physical_directory()
 		{
 			try
 			{
-				var iisExpress = new IisExpress("C:\\" + Guid.NewGuid(), 6845);
+				new IisExpress("C:\\" + Guid.NewGuid(), 6845);
 			}
 			catch (DirectoryNotFoundException)
 			{
