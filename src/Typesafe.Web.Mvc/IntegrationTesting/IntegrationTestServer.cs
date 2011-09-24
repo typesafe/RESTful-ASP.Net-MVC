@@ -8,6 +8,7 @@ namespace Typesafe.Web.Mvc.IntegrationTesting
 {
 	public static class IntegrationTestServer
 	{
+
 		internal static WebServer WebServer = new WebServer(@"D:\_git\typesafe\RestfulMvc\RestfulMvc", 88);
 
 		public static HttpWebResponse Get(string url, IDictionary<string, string> headers = null )
