@@ -49,6 +49,15 @@
     <Compile Include="IntegrationTesting\HttpWebRequestExtensions.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Rest\ControllerContextExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rest\HandleRestErrorAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rest\RepresentationResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Rest\ResourceAttribute.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -56,6 +65,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Rest\RestOperationAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rest\UnsupportedContentTypeException.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Rest\XmlModelBinder.cs">
