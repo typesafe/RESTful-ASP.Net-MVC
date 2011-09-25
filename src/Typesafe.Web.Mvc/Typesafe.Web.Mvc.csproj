@@ -58,7 +58,13 @@
     <Compile Include="Rest\RestOperationAttribute.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TypeExtensions.cs">
+    <Compile Include="Rest\XmlModelBinder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rest\XmlModelBinderProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReflectionExtensions.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
