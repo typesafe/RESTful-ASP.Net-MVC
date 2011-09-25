@@ -13,10 +13,10 @@ namespace Typesafe.Web.Mvc.IntegrationTesting
 		public IisExpress(string physicalPath, int port)
 		{
 			if (!Directory.Exists(physicalPath))
-				throw new DirectoryNotFoundException(string.Format("The web site path ('{0}') does not exist. Did you provide an incorrect path?", physicalPath));
+				throw new DirectoryNotFoundException(string.Format("The web site path '{0}' does not exist. Did you provide an incorrect path?", physicalPath));
 
 			if(!File.Exists(iisExpressExe))
-				throw new FileNotFoundException(string.Format("The IISExpress executable ('{0}') could not be found. Please installe IIS Express first.", iisExpressExe));
+				throw new FileNotFoundException(string.Format("The IISExpress executable '{0}' could not be found. Please installe IIS Express first.", iisExpressExe));
 
 			var psi = new ProcessStartInfo
 			{

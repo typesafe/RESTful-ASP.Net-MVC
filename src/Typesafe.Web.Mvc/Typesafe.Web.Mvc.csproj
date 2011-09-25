@@ -34,6 +34,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -44,7 +46,19 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rest\HttpWebRequestExtensions.cs">
+    <Compile Include="IntegrationTesting\HttpWebRequestExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rest\ResourceAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rest\RouteExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rest\RestOperationAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeExtensions.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

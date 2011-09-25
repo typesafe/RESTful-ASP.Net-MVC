@@ -1,5 +1,9 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Reflection;
+using System.Web.Compilation;
+using System.Web.Mvc;
 using System.Web.Routing;
+using Typesafe.Web.Mvc.Rest;
 
 namespace Typesafe.Web.Mvc.TestSite
 {
@@ -18,6 +22,7 @@ namespace Typesafe.Web.Mvc.TestSite
 
 		private static void RegisterRoutes(RouteCollection routes)
 		{
+			routes.RegisterResouces(BuildManager.GetReferencedAssemblies().Cast<Assembly>());
 		}
 	}
 }
