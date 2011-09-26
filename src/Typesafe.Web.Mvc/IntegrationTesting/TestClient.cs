@@ -20,51 +20,22 @@ namespace Typesafe.Web.Mvc.IntegrationTesting
 			currentIisInstance = new IisExpress(physicalDirectory, port);
 		}
 
-		public static HttpWebResponse Get(string url, IDictionary<string, string> headers = null)
+		public static System.Net.HttpWebResponse Get(string url, IDictionary<string, string> headers = null)
 		{
 			return ExecuteRequest("GET", url, null, headers);
 		}
 
-		public static HttpWebResponse Post(string url, string body, IDictionary<string, string> headers = null)
+		public static System.Net.HttpWebResponse Post(string url, string body, IDictionary<string, string> headers = null)
 		{
 			return ExecuteRequest("POST", url, body, headers);
 		}
 
-		private static HttpWebResponse ExecuteRequest(string method, string url, string body, IDictionary<string, string> headers)
+		private static System.Net.HttpWebResponse ExecuteRequest(string method, string url, string body, IDictionary<string, string> headers)
 		{
-			if(headers == null) headers = new Dictionary<string, string>();
-
-			var request = (HttpWebRequest)WebRequest.Create("http://localhost:" + currentPort + "/" + url);
-			request.Method = method;
-
-			if(headers.ContainsKey("Accept"))
-			{
-				request.Accept = headers["Accept"];
-				headers.Remove("Accept");
-			}
-
-			request.SetHeaders(headers);
-			request.SetBody(body);
-
-			LogRequest(request, body);
-
-			HttpWebResponse response = null;
-
-			try
-			{
-				response = request.GetResponse() as HttpWebResponse;
-			}
-			catch (WebException ex)
-			{
-				response = ex.Response as HttpWebResponse;
-			}
-
-			LogResponse(response);
-
-			return response;
+			return new HttpClient().ExecuteRequest(method, url, headers, body);
 		}
 
-		private static void LogResponse(HttpWebResponse response)
+		private static void LogResponse(System.Net.HttpWebResponse response)
 		{
 			Console.WriteLine("\r\n# RESPONSE");
 			Console.WriteLine("HTTP/1.1 {0} {1}", (int)response.StatusCode, response.StatusDescription);
@@ -74,7 +45,7 @@ namespace Typesafe.Web.Mvc.IntegrationTesting
 			Console.WriteLine("\r\n" + new StreamReader(response.GetResponseStream()).ReadToEnd());
 		}
 
-		private static void LogRequest(HttpWebRequest request, string body)
+		private static void LogRequest(System.Net.HttpWebRequest request, string body)
 		{
 			Console.WriteLine("# REQUEST");
 			Console.WriteLine("{0} {1} HTTP/1.1", request.Method, request.RequestUri);

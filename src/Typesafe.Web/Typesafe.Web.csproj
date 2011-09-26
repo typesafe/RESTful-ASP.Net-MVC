@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B3586301-7DEF-4818-836E-420E614A190E}</ProjectGuid>
+    <ProjectGuid>{CF975312-2FB3-4A59-A82C-5781298F6663}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Typesafe.Web.Mvc</RootNamespace>
-    <AssemblyName>Typesafe.Web.Mvc</AssemblyName>
+    <RootNamespace>Typesafe.Web</RootNamespace>
+    <AssemblyName>Typesafe.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,57 +33,18 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IntegrationTesting\IisExpress.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="IntegrationTesting\TestClient.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="HttpClient.cs" />
+    <Compile Include="HttpWebRequest\HttpWebRequestExtensions.cs" />
+    <Compile Include="HttpWebResponse\HttpWebResponseExtensions.cs" />
+    <Compile Include="IHttpClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ControllerContextExtensions.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DependencyModelBinder.cs" />
-    <Compile Include="DependencyModelBinderProvider.cs" />
-    <Compile Include="Rest\ShieldExceptions.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Rest\RepresentationResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Rest\ResourceAttribute.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Rest\RouteExtensions.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Rest\RestOperationAttribute.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Rest\UnsupportedContentTypeException.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Rest\XmlModelBinder.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Rest\XmlModelBinderProvider.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ReflectionExtensions.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Typesafe.Web\Typesafe.Web.csproj">
-      <Project>{CF975312-2FB3-4A59-A82C-5781298F6663}</Project>
-      <Name>Typesafe.Web</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
