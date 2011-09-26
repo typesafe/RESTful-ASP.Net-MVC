@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Typesafe.Web.Mvc.Rest
+namespace Typesafe.Web.Mvc
 {
 	public static class ControllerContextExtensions
 	{

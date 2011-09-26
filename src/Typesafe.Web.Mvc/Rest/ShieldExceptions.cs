@@ -4,7 +4,7 @@ using System.Web.Mvc;
 
 namespace Typesafe.Web.Mvc.Rest
 {
-	public class HandleRestErrorAttribute : HandleErrorAttribute
+	public class ShieldExceptions : HandleErrorAttribute
 	{
 		private static IDictionary<Type, Func<Exception, ActionResult>> exceptionShieldingMap = new Dictionary<Type, Func<Exception, ActionResult>>();
 
@@ -25,7 +25,7 @@ namespace Typesafe.Web.Mvc.Rest
 			base.OnException(filterContext);
 		}
 
-		private bool ShieldException(ExceptionContext exceptionContext)
+		private static bool ShieldException(ExceptionContext exceptionContext)
 		{
 			var exception = exceptionContext.Exception;
 

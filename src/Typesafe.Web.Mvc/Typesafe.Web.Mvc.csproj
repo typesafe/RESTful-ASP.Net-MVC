@@ -49,10 +49,12 @@
     <Compile Include="IntegrationTesting\HttpWebRequestExtensions.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Rest\ControllerContextExtensions.cs">
+    <Compile Include="ControllerContextExtensions.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Rest\HandleRestErrorAttribute.cs">
+    <Compile Include="DependencyModelBinder.cs" />
+    <Compile Include="DependencyModelBinderProvider.cs" />
+    <Compile Include="Rest\ShieldExceptions.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Rest\RepresentationResult.cs">

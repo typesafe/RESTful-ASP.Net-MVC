@@ -1,5 +1,7 @@
+using System;
 using System.Web.Mvc;
 using Typesafe.Web.Mvc.Rest;
+using Typesafe.Web.Mvc.TestSite.Representations;
 
 namespace Typesafe.Web.Mvc.TestSite.Resources
 {
@@ -7,16 +9,15 @@ namespace Typesafe.Web.Mvc.TestSite.Resources
 	public class SubscriptionResourceController : Controller
 	{
 		[RestOperation(HttpVerbs.Post, "")]
-		public ActionResult Post()
+		public ActionResult Post(SubscriptionSubmission subscription)
 		{
-			return null;
+			return new RepresentationResult(new Subscription { Name=  subscription.Name, SubmissionDate = DateTime.Now });
 		}
 
 		[RestOperation(HttpVerbs.Get, "/{id}")]
 		public ActionResult Get(int id)
 		{
-			return null;
-			//return Representation(new SubscriptionRepresentation{Name = "foobar"});
+			return id == 0 ? (ActionResult)HttpNotFound() : new RepresentationResult(new Subscription { Name = "foo", SubmissionDate = DateTime.Now });
 		}
 	}
 }

@@ -17,7 +17,7 @@ namespace Typesafe.Web.Mvc.TestSite
 
 		private static void RegisterGlobalFilters(GlobalFilterCollection filters)
 		{
-			filters.Add(new HandleErrorAttribute());
+			filters.Add(new ShieldExceptions());
 		}
 
 		private static void RegisterRoutes(RouteCollection routes)

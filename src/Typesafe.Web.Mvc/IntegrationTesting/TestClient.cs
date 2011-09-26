@@ -32,8 +32,16 @@ namespace Typesafe.Web.Mvc.IntegrationTesting
 
 		private static HttpWebResponse ExecuteRequest(string method, string url, string body, IDictionary<string, string> headers)
 		{
+			if(headers == null) headers = new Dictionary<string, string>();
+
 			var request = (HttpWebRequest)WebRequest.Create("http://localhost:" + currentPort + "/" + url);
 			request.Method = method;
+
+			if(headers.ContainsKey("Accept"))
+			{
+				request.Accept = headers["Accept"];
+				headers.Remove("Accept");
+			}
 
 			request.SetHeaders(headers);
 			request.SetBody(body);

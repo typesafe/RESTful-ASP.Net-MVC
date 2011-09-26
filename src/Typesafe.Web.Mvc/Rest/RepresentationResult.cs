@@ -20,7 +20,7 @@ namespace Typesafe.Web.Mvc.Rest
 
 			var expectedContentType = model.GetType().GetXmlRootNamespace();
 
-			if (!context.HttpContext.Request.AcceptTypes.Contains(expectedContentType))
+			if (context.HttpContext.Request.AcceptTypes == null || !context.HttpContext.Request.AcceptTypes.Contains(expectedContentType))
 				throw new UnsupportedContentTypeException(context.GetHeader("Accept"), expectedContentType);
 
 			context.HttpContext.Response.ContentType = expectedContentType;
